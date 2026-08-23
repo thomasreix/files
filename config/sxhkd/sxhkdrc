@@ -1,0 +1,75 @@
+super + Return
+	kitty tmux
+super + c
+	code
+super + s
+    steam
+super + g
+    gimp
+super + m
+    prismlauncher
+super + o
+    obs
+super + d
+	vesktop-bin
+super + w
+    librewolf
+super + a
+    librewolf --new-tab arena.ai/text/direct
+super + y
+    librewolf --new-tab youtube.com
+super + r
+	flatpak run org.vinegarhq.Sober		
+super + shift + r
+    flatpak run org.vinegarhq.Vinegar
+super + j
+	flatpak run org.kde.krita
+super + k
+	flatpak run org.kde.kdenlive
+super + shift + e
+    flatpak run org.kde.dolphin
+super + i
+    flatpak run com.github.Anuken.Mindustry
+
+	
+Print
+    f=~/media/screenshots/$(date +%s).png; maim "$f" && xclip -selection clipboard -t image/png -i "$f"
+
+shift + Print
+    f=~/media/screenshots/$(date +%s).png; maim -s "$f" && xclip -selection clipboard -t image/png -i "$f"
+
+	
+super + q
+	bspc node -k
+super + F1
+	bspc quit
+super + F2
+	systemctl suspend
+super + F3
+	systemctl reboot
+super + F4
+	systemctl poweroff
+
+super + F5
+	bspc wm -r; pkill -USR1 -x sxhkd
+
+
+super + space
+	bspc node -t ~floating
+super + F9
+	bspc node -t pseudo_tiled
+super + F10
+	bspc node -t tiled
+super + F11
+	bspc desktop -l next
+super + F12
+    kitty tmux new-session \; \
+      send-keys 'micro ~/.config/bspwm/bspwmrc' C-m \; \
+      split-window -h \; \
+      send-keys 'micro ~/.config/sxhkd/sxhkdrc' C-m
+
+
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+super + shift + {1-9,0}
+	bspc node -d '^{1-9,10}'
