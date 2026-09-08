@@ -1,0 +1,71 @@
+# /etc/skel/.bashrc
+#
+# This file is sourced by all *interactive* bash shells on startup,
+# including some apparently interactive shells such as scp and rcp
+# that can't tolerate any output.  So make sure this doesn't display
+# anything or bad things will happen !
+
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+
+# Put your fun stuff here.
+
+export EDITOR="micro"
+export VISUAL="micro"
+alias m='micro'
+alias e='nano'
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+nether() {
+    local clean
+    clean=$(echo "$*" | tr -d '(),/')
+    local coords=($clean)
+
+    if [ ${#coords[@]} -eq 2 ]; then
+        awk -v x="${coords[0]}" -v z="${coords[1]}" 'BEGIN { printf "%d %d\n", x/8, z/8 }'
+    elif [ ${#coords[@]} -eq 3 ]; then
+        awk -v x="${coords[0]}" -v z="${coords[2]}" 'BEGIN { printf "%d %d\n", x/8, z/8 }'
+    else
+        echo "Usage: nether x z  or  nether x y z"
+    fi
+}
+
+triangles() {
+    if [ ! -f "$1" ]; then
+        echo "Error: File '$1' not found."
+        return 1
+    fi
+
+    local count
+    count=$(grep -c "endfacet" "$1" 2>/dev/null)
+
+    if [ "$count" -gt 0 ]; then
+        # ASCII STL
+        echo "$count"
+    else
+        # Binary STL (reads byte offset 80 where header ends)
+        od -An -j80 -N4 -td4 "$1" 2>/dev/null | tr -d ' '
+    fi
+}
+
+alias notify="notify-send"
+
+alias binds="nano ~/.config/sxhkd/sxhkdrc"
+alias wm="nano ~/.config/bspwm/bspwmrc"
+
+c() {
+    local file="$1"
+    local base="${file%.*}" # removes .c if typed
+    gcc "$base.c" -o "$base" && ./"$base"
+}
+
+export HISTFILE="$HOME/.config/bash/bash_history"
+alias startx='startx "$HOME/.config/X11/xinitrc"'

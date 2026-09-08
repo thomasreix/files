@@ -1,0 +1,98 @@
+
+# ------------------------------------------
+# Default
+# ------------------------------------------
+color-link default          ","
+
+# ------------------------------------------
+# Syntax Highlighting - Main Groups
+# ------------------------------------------
+color-link comment          "#5f5f5f,"
+color-link comment.bright   "afafaf,"
+
+color-link identifier       "#8be9fd,"
+color-link identifier.class "#50fa7b,"
+color-link identifier.macro "#ffb86c,"
+color-link identifier.var   "#ff5555,"
+
+color-link constant              "#bd93f9,"
+color-link constant.bool         "#bd93f9,"
+color-link constant.bool.true    "#50fa7b,"
+color-link constant.bool.false   "#ff5555,"
+color-link constant.number       "#bd93f9,"
+color-link constant.specialChar  "#ff79c6,"
+color-link constant.string       "#f1fa8c,"
+color-link constant.string.url   "underline #6272a4,"
+
+color-link statement        "#ff79c6,"
+color-link preproc          "#ff79c6,"
+color-link preproc.shebang  "bold #5f5f5f,"
+
+color-link symbol           ","
+color-link symbol.brackets  ","
+color-link symbol.operator  "#ff79c6,"
+color-link symbol.tag       "#ff5555,"
+
+color-link type             "#8be9fd,"
+color-link type.keyword     "bold #8be9fd,"
+
+color-link special          "#ffb86c,"
+color-link underlined       "underline #6272a4,"
+color-link todo             "bold #ffb86c,"
+color-link error            "bold #ff5555,"
+color-link ignore           "#5f5f5f,"
+
+# ------------------------------------------
+# UI - Statusline
+# ------------------------------------------
+color-link statusline              ","
+color-link statusline.inactive     "#5f5f5f,"
+color-link statusline.suggestions  ","
+
+# ------------------------------------------
+# UI - Tabbar
+# ------------------------------------------
+color-link tabbar           "#5f5f5f,"
+color-link tabbar.active    ","
+
+# ------------------------------------------
+# UI - Line Numbers / Gutter
+# ------------------------------------------
+color-link line-number          "#5f5f5f,"
+color-link current-line-number  "bold ,"
+color-link cursor-line          "2f2f2f,2f2f2f"
+
+color-link gutter-info      "#8be9fd,"
+color-link gutter-error     "#ff5555,"
+color-link gutter-warning   "#f1fa8c,"
+
+# ------------------------------------------
+# UI - Selection / Search
+# ------------------------------------------
+color-link selection        ",#6272a4"
+color-link match-brace      "bold #50fa7b,"
+color-link hlsearch         ",#ffb86c"
+
+# ------------------------------------------
+# UI - Diff (Git)
+# ------------------------------------------
+color-link diff-added       "#2ea043,"
+color-link diff-modified    "#d29922,"
+color-link diff-deleted     "#da3633,"
+
+# ------------------------------------------
+# UI - Indentation / Whitespace
+# ------------------------------------------
+color-link indent-char      "#5f5f5f,"
+color-link tab-error        "#ff5555,"
+color-link trailingws       "#ff5555,"
+
+# ------------------------------------------
+# UI - Miscellaneous
+# ------------------------------------------
+color-link color-column     ","
+color-link scrollbar        "#5f5f5f,"
+color-link divider          "#5f5f5f,"
+color-link message          "#50fa7b,"
+color-link error-message    "bold #ff5555,"
+

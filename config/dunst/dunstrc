@@ -1,0 +1,31 @@
+[global]
+    width = 300
+    height = 200
+    offset = 20x20
+    origin = top-right
+
+    gap_size = 10
+    
+    corner_radius = 0
+    
+    frame_width = 4
+    
+    font = Iosevka Nerd Font
+
+[urgency_low]
+    background = "#0f0f0f"
+    foreground = "#ffffff"
+    frame_color = "#ef934d"
+    timeout = 5
+
+[urgency_normal]
+    background = "#0f0f0f"
+    foreground = "#ffffff"
+    frame_color = "#ef934d"
+    timeout = 5
+
+[urgency_critical]
+    background = "#0f0f0f"
+    foreground = "#ffffff"
+    frame_color = "#ef934d"
+    timeout = 5
